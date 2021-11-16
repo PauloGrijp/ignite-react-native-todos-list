@@ -1,3 +1,4 @@
+import { doExpression } from '@babel/types';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -18,7 +19,17 @@ export function Home() {
   }
 
   function handleToggleTaskDone(id: number) {
-    //TODO - toggle task done if exists
+    const toggleTasksDone = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          done: !task.done,
+        }
+      }
+      return task;
+    });
+
+    setTasks(toggleTasksDone)
   }
 
   function handleRemoveTask(id: number) {
