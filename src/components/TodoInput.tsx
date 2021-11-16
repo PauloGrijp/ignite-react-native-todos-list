@@ -31,7 +31,6 @@ export function TodoInput({ addTask }: TodoInputProps) {
         activeOpacity={0.7}
         style={styles.addButton}
         onPress={handleAddNewTask}
-        //TODO - onPress prop
       >
         <Icon name="chevron-right" size={24} color="#B2B2B2" />
       </TouchableOpacity>
